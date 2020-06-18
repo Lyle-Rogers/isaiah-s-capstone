@@ -1,0 +1,103 @@
+users = [
+    {
+        id: 1,
+        username: "lyle",
+        role: "user",
+        email: "",
+        password: ""
+    },
+    {
+        id: 2,
+        username: "isaia",
+        role: "superuser",
+        email: "fuckyou@gmail.com",
+        password: ""
+    },
+]
+
+group = [
+    user = {
+        canRead: true,
+        canWrite: false,
+    },
+    superuser = {
+        canRead: true,
+        canWrite: true,
+        canDoEverything: "obviously",
+    }
+]
+
+posts = [
+    {
+        id: 77,
+        title: "Fuck you",
+        content: "eat shit" 
+     },
+     {
+         id: 77,
+         title: "Fuck you",
+         content: "eat shit" 
+      },
+      {
+          id: 77,
+          title: "Fuck you",
+          content: "eat shit" 
+       }
+]
+
+axios to the api fuckyou.com/backend/auth
+
+{
+    get, "fuckyou.com/backend/auth",
+    {
+        user: 'isaia',
+        password: 'password',
+    }
+}
+
+(req) => {
+    const user = req.object.user
+    const pass = req.object.pass
+
+    databaseDriver.talkToDatabase(
+        "
+        SELECT password, username FROM users
+        
+        RETURN password, username
+        ",
+        return password, username
+    )
+
+    const databasePass, dataUser = database
+
+
+    if pass == databasePass && if user == dataUser {
+        return AUTHTOKEN : sodgnldksndksndlk
+    }
+    else {
+        return (
+            {
+                error: "Shit's fucked, you got it wrong"
+            }
+        )
+    }
+
+}
+
+getPosts(req) {
+    if authtoken {
+        (user) => {
+            talkToDatabase(user) {
+                "
+                SELECT * FROM posts
+                WHERE user == ${user}
+                RETURN *
+                "
+            }
+            return theFuckingPosts
+        }
+    }
+    else {
+        return "Fuck off"
+    }
+}
