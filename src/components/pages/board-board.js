@@ -14,7 +14,7 @@ export default class BoardBoard extends Component {
         super(props);
         
         this.state={
-            board: "1"
+            board: "Community"
         }
 
         this.handleCom = this.handleCom.bind(this);
@@ -26,38 +26,39 @@ export default class BoardBoard extends Component {
 
     handleCom() {
         this.setState({
-            board: "1" 
+            board: "Community" 
         })
     }
 
     handlePol() {
         this.setState({
-            board: "2" 
+            board: "Politics" 
         })
     }
 
     handleBs() {
         this.setState({
-            board: "3" 
+            board: "Bull Shit" 
         })
     }
     handleRandom() {
         this.setState({
-            board: "4" 
+            board: "Random" 
         })
     }
 
 
 
     render() {
+        
 
-        if (this.state.board === "1") {
+        if (this.state.board === "Community") {
             return <BoardCom handleCom={this.handleCom} handlePol={this.handlePol} handleBs={this.handleBs} handleRandom={this.handleRandom}/>
-        } else if (this.state.board === "2") {
+        } else if (this.state.board === "Politics") {
             return <BoardPol handleCom={this.handleCom} handlePol={this.handlePol} handleBs={this.handleBs} handleRandom={this.handleRandom}/>
-        }else if (this.state.board === "3") {
+        }else if (this.state.board === "Bull Shit") {
             return <BoardBs handleCom={this.handleCom} handlePol={this.handlePol} handleBs={this.handleBs} handleRandom={this.handleRandom}/>
-        }else if (this.state.board === "4") {
+        }else if (this.state.board === "Random") {
             return <BoardRandom handleCom={this.handleCom} handlePol={this.handlePol} handleBs={this.handleBs} handleRandom={this.handleRandom}/>
         } 
     }
