@@ -1,79 +1,37 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
-import { Navbar } from 'react-bootstrap';
+import { Navbar, Nav } from "react-bootstrap";
 
+export default class MyNavBar extends Component {
+  constructor(props) {
+    super(props);
+  }
 
-export default class NavBar extends Component {
-    constructor(props) {
-        super(props);
+  render() {
+    return (
+      <Navbar bg="dark" variant="dark" expand="sm" className="mt-100">
+        <Navbar.Brand>Boards</Navbar.Brand>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+          <Nav className="mr-auto">
+            <NavLink to="/board/com" className="nav-link">
+              Community
+            </NavLink>
 
+            <NavLink to="/board/pol" className="nav-link">
+              Polotics
+            </NavLink>
 
-        this.state= {
-            board:"Community"
-        }
+            <NavLink to="/board/bs" className="nav-link">
+              Bull Shit
+            </NavLink>
 
-        this.handleHeaderCom = this.handleHeaderCom.bind(this);
-        this.handleHeaderPol = this.handleHeaderPol.bind(this);
-        this.handleHeaderBs = this.handleHeaderBs.bind(this);
-        this.handleHeaderRandom = this.handleHeaderRandom.bind(this);
-
-    
-    }
-
-    handleHeaderCom() {
-        this.setState({board:"Community"});
-        this.props.handleCom;
-    }
-
-    handleHeaderPol() {
-        this.props.handlePol;
-
-        this.setState({board:"Polotics"});
-
-    }
-
-    handleHeaderBs() {
-        this.setState({board:"Bull Shit"})
-    }
-
-    handleHeaderRandom() {
-        this.setState({board:"Random"})
-    }
-
-    render() {
-        return (
-            <Navbar bg="dark"  expand="sm">
-
-        <Navbar.Brand>{`${this.state.board}`}</Navbar.Brand>
-                    
-                    <div className='nav-links' >
-                        <div className='nav-link' >
-                        <a onClick={this.handleHeaderCom}>
-                            Com
-                        </a>
-                        </div>
-
-                        <div className='nav-link' >
-                        <a onClick={ this.handleHeaderPol}>
-                            Pol
-                        </a>
-                        </div>
-
-                        <div className='nav-link' >
-                        <a onClick={this.props.handleBs, this.handleHeaderBs}>
-                            BS
-                        </a>
-                        </div>
-
-                        <div className='nav-link' >
-                        <a onClick={this.props.handleRandom, this.handleHeaderRandom}>
-                            Random
-                        </a>
-                        </div>
-                    </div>
-
-            </Navbar>
-
-        );
-    }
+            <NavLink to="/board/r" className="nav-link">
+              Random
+            </NavLink>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+    );
+  }
 }

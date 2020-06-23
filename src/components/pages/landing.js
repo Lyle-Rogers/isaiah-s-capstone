@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Link, Redirect } from "react-router-dom";
+import { NavLink, Redirect } from "react-router-dom";
 import { Alert, NavBar, Button, Row, Modal, Container } from "react-bootstrap";
 
 
@@ -15,6 +15,7 @@ export default class Disclaimer extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleModalShow = this.handleModalShow.bind(this);
     this.handleModalClose = this.handleModalClose.bind(this);
+    this.goToRules = this.goToRules.bind(this)
 
     }
     handleChange(event) {
@@ -40,12 +41,17 @@ export default class Disclaimer extends Component {
         this.setState({modalOpen:false})
     }
 
+    goToRules() {
+        this.setState({rules: true})
+    }
+
+
 
     render() {
 
 
         if (this.state.redirect) {
-            return <Redirect to="/boards" />
+            return <Redirect to="/board" />
         }else if (this.state.modalOpen) {
             return (
                 <Container>
@@ -65,21 +71,34 @@ export default class Disclaimer extends Component {
                     <h2> Poop your pants</h2>
                 </Container>
             )
+        } else if (this.state.rules) {
+            return <Redirect to="/rules" />
         }
         return (
                 <div className="landing-wrapper " >
-                        <h2 className="heading">LeBaron Anonymous</h2>
-                    <Alert variant="warning" className="warning">
+                        <h2 className="ml-auto mr-auto mt-4 mb-5">LeBaron Anonymous</h2>
+                    <Alert variant="warning" className="m-auto warning">
                         <h1 >Disclaimer</h1>
-                        <p>
+                        <p >
                             By continue to this  
                             website <br/> you are confirming that you <br/>
-                            have read and agree to the <br/> </p> <Alert.Link onClick={this.handleModalShow} className="alert-link">Terms &amp; Conditions</Alert.Link> 
-                        
+                            have read and agree to both<br/>the Terms &amp; Conditions and <br/>the Rules...<br/> </p> <Alert.Link onClick={this.handleModalShow} className="alert-link">Terms &amp; Conditions</Alert.Link> 
+                            <br/>  <Alert.Link className="left" onClick={this.goToRules}>Rules</Alert.Link>
                     </Alert>
-
-                    <Button onClick={this.handleSubmit} variant="outline-dark" className="continue" size="lg">Continue</Button>
-
+                    <div className="d-flex flex-column m-auto ">
+                        <NavLink to="/board/com">
+                        <Button variant="outline-dark" className="w-100 p-3 mt-5" size="m">Community</Button>
+                        </NavLink>
+                        <NavLink to="/board/pol">
+                        <Button variant="outline-dark" className="w-100 p-3 mt-4" size="m">Politics</Button>
+                        </NavLink>
+                        <NavLink to="/board/bs">
+                        <Button variant="outline-dark" className="w-100 p-3 mt-4" size="m">Bull Shit</Button>
+                        </NavLink>
+                        <NavLink to="/board/r">
+                        <Button variant="outline-dark" className="w-100 p-3 mt-4" size="m">Random</Button>
+                        </NavLink>
+                    </div>
 
 
         
