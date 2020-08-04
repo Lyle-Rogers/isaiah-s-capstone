@@ -45,6 +45,29 @@
   margin-left: 50px !important;
 }
 
+.ml-100px {
+  margin-left: 90px;
+}
+
+.ml-280 {
+  margin-left: 280px;
+}
+
+.ml-300 {
+  margin-left: 300px;
+}
+
 .resize-none {
   resize: none;
+}
+
+.z-index {
+  z-index: 1;
+}
+
+.outline-none {
+  outline: none !important;
+  &:active {
+    outline: none;
+  }
 }

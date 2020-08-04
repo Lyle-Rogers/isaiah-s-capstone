@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export default class NewThread extends Component {
   constructor(props) {
@@ -20,7 +22,12 @@ export default class NewThread extends Component {
       <Container>
         <Row>
           <Col>
-            <div className="justify-center margin-top ">
+            <Link to="/board/boardId">
+              <div className=" mt-3 h2 mb-0 text-dark">
+                <FontAwesomeIcon icon="times" />
+              </div>
+            </Link>
+            <div className="justify-center mt-5">
               <h1>New Thread</h1>
             </div>
 

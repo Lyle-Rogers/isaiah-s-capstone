@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Form, Button, Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
 export default class NewPoll extends Component {
   constructor(props) {
@@ -43,7 +44,12 @@ export default class NewPoll extends Component {
 
   render() {
     return (
-      <Container fluid className="margin-auto">
+      <Container fluid className="mt-3 m-auto">
+        <Link to="/board/boardId">
+          <div className=" h2 text-dark">
+            <FontAwesomeIcon icon="times" />
+          </div>
+        </Link>
         <Row>
           <Col>
             <div className="justify-center">

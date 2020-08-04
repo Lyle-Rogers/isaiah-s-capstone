@@ -107,7 +107,9 @@ export default class Board extends Component {
           <Card.Title className="mb-0">{item.title}</Card.Title>
           <small className="mt-0 mb-5">by {item.username}</small>
           <Card.Text className="mt-4">{item.content}</Card.Text>
-          <Button variant="primary">View Posts</Button>
+          <Link to="/board/:boardId/:threadId">
+            <Button variant="primary">View Posts</Button>
+          </Link>
         </Card.Body>
       </div>
     );
@@ -116,7 +118,7 @@ export default class Board extends Component {
   render() {
     return (
       <div>
-        <div className="position-fixed w-100 mt--50 ">
+        <div className="position-fixed w-100 mt--50 z-index">
           <MyNavBar />
         </div>
         <div>

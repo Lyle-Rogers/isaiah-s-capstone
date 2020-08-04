@@ -25,7 +25,9 @@ export default class App extends Component {
         <Router>
           <Switch>
             <Route exact path="/" component={Landing} />
+            <Route path="/board/:boardId/:threadId" component={ThreadDetails} />
             <Route path="/board/:boardId" component={Board} />
+
             <Route path="/details" component={ThreadDetails} />
             <Route path="/rules" component={Rules} />
             <Route path="/PLACEWHEREPORCELAIN" component={LogIn} />

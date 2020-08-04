@@ -11,7 +11,10 @@ export default class MyNavBar extends Component {
     return (
       <Navbar bg="dark" variant="dark" expand="sm" className="mt-100">
         <Navbar.Brand>Boards</Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="outline-none"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <NavLink to="/board/com" className="nav-link">
